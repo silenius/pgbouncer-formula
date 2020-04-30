@@ -2,7 +2,7 @@
 
 FreeBSD:
   ini: /usr/local/etc/pgbouncer.ini
-  users: /usr/local/etc/pgbouncer.users
+  auth_users: /usr/local/etc/pgbouncer.users
   pkg: pgbouncer
   user: pgbouncer
   group: pgbouncer

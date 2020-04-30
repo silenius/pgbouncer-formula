@@ -7,7 +7,7 @@ include:
 {% if pgbouncer.users is defined %}
 pgbouncer_users:
   file.managed:
-    - name: {{ pgbouncer.users }}
+    - name: {{ pgbouncer.auth_users }}
     - user: {{ pgbouncer.user }}
     - group: {{ pgbouncer.group }}
     - mode: 640
