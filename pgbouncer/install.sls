@@ -2,4 +2,4 @@
 
 pgbouncer_pkg:
   pkg.installed:
-    - name: {{ pgbouncer.lookup.pkg }}
+    - name: {{ pgbouncer.pkg }}
