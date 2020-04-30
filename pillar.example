@@ -18,4 +18,8 @@ pgbouncer:
         '*': host=pg11.lan
     absent:
       pgbouncer:
-        somekey: somevalue
+        - somekey
+        - anotherkey
+      databases:
+        - somedb
+        

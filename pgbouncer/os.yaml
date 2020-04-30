@@ -1,7 +1,7 @@
 # vim: ts=2 sw=2
 
 FreeBSD:
-  config: /usr/local/etc/pgbouncer.ini
+  ini: /usr/local/etc/pgbouncer.ini
   users: /usr/local/etc/pgbouncer.users
   pkg: pgbouncer
   user: pgbouncer

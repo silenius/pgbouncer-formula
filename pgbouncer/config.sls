@@ -21,12 +21,26 @@ pgbouncer_users:
       - ini: pgbouncer_ini
 {% endif %}
 
-pgbouncer_ini:
+{% if pgbouncer.config.present is defined %}
+pgbouncer_ini_present:
   ini.options_present:
-    - name: {{ pgbouncer.config }}
+    - name: {{ pgbouncer.ini }}
     - sections: 
-        {{ pgbouncer.config|yaml }} 
+        {{ pgbouncer.config.present|yaml }} 
     - require:
       - pkg: pgbouncer
     - watch_in:
       - service: pgbouncer_service
+{% endif %}
+
+{% if pgbouncer.config.absent is defined %}
+pgbouncer_ini_absent:
+  ini.options_absent:
+    - name: {{ pgbouncer.ini }}
+    - sections: 
+        {{ pgbouncer.config.absent|yaml }} 
+    - require:
+      - pkg: pgbouncer
+    - watch_in:
+      - service: pgbouncer_service
+{% endif %}
