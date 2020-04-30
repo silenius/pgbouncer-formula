@@ -17,8 +17,6 @@ pgbouncer_users:
       {%- endfor %}
     - require:
       - pkg: {{ pgbouncer.pkg }}
-    - require_in:
-      - ini: pgbouncer_ini
 {% endif %}
 
 {% if pgbouncer.config.present is defined %}
