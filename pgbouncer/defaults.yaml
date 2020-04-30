@@ -1,0 +1,14 @@
+# vim: ts=2 sw=2
+
+{% set listen_addr = salt.grains.get('fqdn_ip4:0') %}
+
+pgbouncer:
+  config:
+    pgbouncer:
+      logfile: /var/log/pgbouncer/pgbouncer.log
+      pidfile: /var/run/pgbouncer/pgbouncer.pid
+      listen_addr: {{ listen_addr }}
+      listen_port: 6432
+      auth_type: md5
+      default_pool_size: 5
+      pool_mode: session

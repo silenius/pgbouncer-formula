@@ -1,0 +1,18 @@
+{% import_yaml "pgbouncer/defaults.yaml" as defaults %}
+{% import_yaml "pgbouncer/os.yaml" as osmap %}
+
+{#
+{% load_yaml as pgbouncer_defaults %}
+
+{% endload %}
+#}
+
+{% set pgbouncer = salt.grains.filter_by(
+        defaults,
+        merge=salt.grains.filter_by(
+            osmap,
+            grain='os',
+            merge=salt.pillar.get('pgbouncer', {})
+        ), base='pgbouncer'
+    )
+%}

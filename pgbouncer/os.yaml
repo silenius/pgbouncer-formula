@@ -1,0 +1,12 @@
+# vim: ts=2 sw=2
+
+FreeBSD:
+  lookup:
+    config: /usr/local/etc/pgbouncer.ini
+    users: /usr/local/etc/pgbouncer.users
+    pkg: pgbouncer
+    user: pgbouncer
+    group: pgbouncer
+  config:
+    pgbouncer:
+      auth_file: /usr/local/etc/pgbouncer.users
